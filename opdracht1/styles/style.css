@@ -3,14 +3,6 @@
 /*********/
 /* FONTS */
 /*********/
-@font-face {
-	font-family: 'eenfont';
-	src: url('../fonts/eenfont.woff2') format('woff2'),
-			 url('../fonts/eenfont.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-
-}
 
 
 
@@ -36,13 +28,18 @@ button:not[disabled], summary {
 /*********************/
 :root {
 	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+	--color-text:#052f3d;
+	--color-background:#4287f5;
 }
 
 
-
-
+/* 
+ga hier eens naar kijken Q!:::
+background: radial-gradient(ellipse at 50% 90%, #ffd700 20%, rgba(255, 215, 0, 0) 20.5%) 42% 98%/1.2em 2em; ==
+background-position-x: 42%;
+background-position-y: 98%;
+background-image: radial-gradient(at 50% 90%, rgb(255, 215, 0) 20%, rgba(255, 215, 0, 0) 20.5%);
+background-size: 1.2em 2em; */
 
 /****************/
 /* JOUW STYLING */
@@ -50,8 +47,70 @@ button:not[disabled], summary {
 body {
   font-family:eenfont, sans-serif;
   color:var(--color-text);
-  background-color:var(--color-background);
+  background-image:
+  linear-gradient(
+	#4287f5 50%,
+	 rgb(117, 197, 80) 50%
+  );
+  background-size: 100% 100%;
+  background-position: left top;
+  display: grid;
+  height: 100dvh;
+  margin-left: 1em;
+  transition: 1s;
+}
+/* body:hover{
+	background-position: left bottom;
+} */
+h1 {
+	font-family: roboto;
+	font-weight: 800;
+	display: flex;
+
 }
 
+h1 span:nth-of-type(1) {
+	text-transform: capitalize;
+	z-index: 2;
+	color: white;
+	margin-right: 0.24em;
+	position: relative;
+}
+h1 span:nth-of-type(1)::before {
+	content: "";
+	position: relative;
+	background-color: #052f3d;
+	width: 1.1em;
+	height: 1.1em;
+	border-radius: 50%;
+	display: inline-block;
+	z-index: -11;
+	left: 29px;
+	bottom: -5px;
+}
+
+h1 span:nth-of-type(2) {}
+h1 span:nth-of-type(2)::before {}
+h1 span:nth-of-type(2)::after {}
+
+h1 span:nth-of-type(3) {}
+h1 span:nth-of-type(3)::before {}
+h1 span:nth-of-type(3)::after {}
+
+h1 span:nth-of-type(4) {}
+h1 span:nth-of-type(4)::before {}
+h1 span:nth-of-type(4)::after {}
+
+h1 span:nth-of-type(5) {}
+h1 span:nth-of-type(5)::before {}
+h1 span:nth-of-type(5)::after {}
+
+h1 span:nth-of-type(6) {}
+h1 span:nth-of-type(6)::before {}
+h1 span:nth-of-type(6)::after {}
+
+h1 span:nth-of-type(7) {}
+h1 span:nth-of-type(7)::before {}
+h1 span:nth-of-type(7)::after {}
 /* jouw code */
 
