@@ -14,7 +14,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
 ## Bronnenlijst
-  1. -bron 1-
+  1. Golf.nl
   2. -bron 2-
   3. -...-
 
@@ -27,15 +27,14 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Je storyboard:
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="storyboard voor opdracht 1">
+  ![Artboard 1](https://user-images.githubusercontent.com/118189343/219037003-a3e1ee6d-f52c-4e95-8270-e366ea486bcb.png)
+
 
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Ik wil goed leren een achtergrond met layers in css werken
+
  
 </details>
 
