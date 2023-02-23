@@ -11,11 +11,14 @@
 /**************/
 /* CSS REMEDY */
 /**************/
-*, *::after, *::before {
-  box-sizing:border-box;  
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
 }
 
-button:not[disabled], summary {
+button:not[disabled],
+summary {
 	cursor: pointer;
 }
 
@@ -28,8 +31,8 @@ button:not[disabled], summary {
 /*********************/
 :root {
 	/* startje */
-	--color-text:#052f3d;
-	--color-background:#4287f5;
+	--color-text: #052f3d;
+	--color-background: #4287f5;
 }
 
 
@@ -45,28 +48,53 @@ background-size: 1.2em 2em; */
 /* JOUW STYLING */
 /****************/
 body {
-  font-family:eenfont, sans-serif;
-  color:var(--color-text);
-  background-image:
-  linear-gradient(
-	#4287f5 50%,
-	 rgb(117, 197, 80) 50%
-  );
-  background-size: 100% 100%;
-  background-position: left top;
-  display: grid;
-  height: 100dvh;
-  margin-left: 1em;
-  transition: 1s;
+	font-family: eenfont, sans-serif;
+	color: var(--color-text);
+	background-image:
+		linear-gradient(#4287f5 15%,
+			rgb(41, 81, 23) 10%);
+	/* background-size: 100% 200% om lucht te immiteren. */
+	background-size: 100% 100%;
+	background-position: left top;
+	display: grid;
+	height: 100dvh;
+	margin-left: 1em;
+	transition: 1s;
 }
+
 /* body:hover{
 	background-position: left bottom;
 } */
+/* Tee-box */
+Body::before {
+	content: "";
+	position: absolute;
+	background: rgb(91, 153, 63);
+	clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+	width: 30em;
+	height: 15em;
+	bottom: -1em;
+	left: calc(50% - 15em);
+	z-index: 10;
+}
+
+/* Boom */
+Body::after {
+	content: "";
+	position: absolute;
+	background-image: linear-gradient(#133c01 50%, rgb(45, 23, 3) 30%);
+	clip-path: polygon(15% 41%, 12% 22%, 31% 6%, 67% 6%, 89% 18%, 88% 41%, 75% 49%, 64% 59%, 65% 100%, 40% 100%, 38% 60%, 30% 48%);
+	width: 15em;
+	height: 20em;
+	bottom: 25%;
+
+	z-index: 10;
+}
+
 h1 {
 	font-family: roboto;
 	font-weight: 800;
 	display: flex;
-
 }
 
 h1 span:nth-of-type(1) {
@@ -76,6 +104,7 @@ h1 span:nth-of-type(1) {
 	margin-right: 0.24em;
 	position: relative;
 }
+
 h1 span:nth-of-type(1)::before {
 	content: "";
 	position: relative;
@@ -87,30 +116,72 @@ h1 span:nth-of-type(1)::before {
 	z-index: -11;
 	left: 29px;
 	bottom: -5px;
+
 }
 
-h1 span:nth-of-type(2) {}
-h1 span:nth-of-type(2)::before {}
+/* Fairway */
+h1 span:nth-of-type(1)::after {
+	content: '';
+	clip-path: polygon(45% 0, 55% 0, 100% 100%, 0% 100%);
+	position: absolute;
+	bottom: -1em;
+	left: -50%;
+	z-index: -10;
+	width: 1400px;
+	height: 85%;
+	background-color: #2b8f00;
+
+}
+
+
+h1 span:nth-of-type(2) {
+}
+/* Green */
+h1 span:nth-of-type(2)::before {
+		content: '';
+		position: absolute;
+		top: 4em;
+		left: calc(50% - 6em);
+		width: 12em;
+		height: 5em;
+		border-radius: 50%;
+		background-color: #3cc800;
+		z-index: 40;
+		background-image: 
+		  radial-gradient(black 0.5em, transparent 0);
+		  background-position: -1em -1em, -1em -1em;
+}
+
 h1 span:nth-of-type(2)::after {}
 
 h1 span:nth-of-type(3) {}
+
 h1 span:nth-of-type(3)::before {}
+
 h1 span:nth-of-type(3)::after {}
 
 h1 span:nth-of-type(4) {}
+
 h1 span:nth-of-type(4)::before {}
+
 h1 span:nth-of-type(4)::after {}
 
 h1 span:nth-of-type(5) {}
+
 h1 span:nth-of-type(5)::before {}
+
 h1 span:nth-of-type(5)::after {}
 
 h1 span:nth-of-type(6) {}
+
 h1 span:nth-of-type(6)::before {}
+
 h1 span:nth-of-type(6)::after {}
 
 h1 span:nth-of-type(7) {}
-h1 span:nth-of-type(7)::before {}
-h1 span:nth-of-type(7)::after {}
-/* jouw code */
 
+h1 span:nth-of-type(7)::before {}
+
+h1 span:nth-of-type(7)::after {}
+
+/* jouw code */
