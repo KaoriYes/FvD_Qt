@@ -15,6 +15,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 ## Bronnenlijst
   1. Golf.nl
+  2. Spotify
 
 
 
