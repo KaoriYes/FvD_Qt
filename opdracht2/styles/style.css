@@ -284,9 +284,6 @@ body:has(.right-album:hover) main section ul::before {
 }
 
 @media (max-width: 800px) {
-	html{
-		/* overflow: auto; */
-	}
 	body main>section:nth-of-type(1){
 		display: none;
 	} 
