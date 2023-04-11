@@ -4,7 +4,7 @@
 **De opdrachten:** [opdracht 1](opdracht1/index.html) en [opdracht 2](opdracht2/index.html)
 ## Opdracht 2 werkt alleen met een live-server.
     npm install live-server
-    $ live server
+    $ live-server
 
 Markdown is een simpele manier om HTML te schrijven.  
 Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
