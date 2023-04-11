@@ -1,0 +1,258 @@
+/* CSS Document */
+
+/*********/
+/* FONTS */
+/*********/
+@font-face {
+	font-family: 'Courier New';
+	src: url('../fonts/Courier_New.ttf') format('woff');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+
+
+
+
+/**************/
+/* CSS REMEDY */
+/**************/
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+button:not[disabled],
+summary {
+	cursor: pointer;
+}
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	--color-text: #111;
+	--color-background: #eee;
+	--box-shadow: 2px 2px .5em rgba(255, 255, 255, .25);
+}
+
+/****************/
+/* JOUW STYLING */
+/****************/
+html {
+	overflow: hidden;
+}
+
+body {
+	font-family: 'Courier New', Courier, monospace, sans-serif;
+	color: var(--color-text);
+	background-color: var(--color-background);
+}
+
+/* mijn code */
+
+h1{
+	position: absolute;
+	top: 1em;
+	left: calc(50% - 6.5em);
+	z-index: 100;
+	color: white;
+}
+button:hover{
+	cursor: pointer;
+}
+body main>section:first-of-type{
+	position: absolute;
+	top: 2em;
+	z-index: 100;
+}
+body main>section:first-of-type h2{
+	color: white;
+	margin-bottom: .5em;
+	margin-left: .5	em;
+}
+body main>section:first-of-type button{
+	min-width: 10em;
+	background-color: #3b3b3b;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 1em;
+	color: white;
+	padding: .55em 1em;
+	border: none;
+	border-radius: 1em;
+}
+body main>section:first-of-type button:hover {
+	color: #000;
+	background-color: white;
+}
+body main section ul {
+	width: 100vw;
+	position: relative;
+	list-style-type: none;
+	background-color: #1b1b1b;
+	color: white;
+	height: 100dvh;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 2em;
+
+}
+
+body main section ul li {
+	background-color: #2b2b2b;
+	padding: .5em 1em;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	width: 20vw;
+	/* height: 20em; */
+	border-top-left-radius: 2em;
+	border-bottom-right-radius: 2em;
+	box-shadow: var(--box-shadow);
+	z-index: 5;
+	transition: 500ms ease;
+	opacity: .65;
+	transform: translate(-55%, 0);
+}
+
+
+body main section ul li:hover {
+	opacity: 1;
+}
+
+body main section ul li img {
+	width: 100%;
+	box-shadow: var(--box-shadow);
+}
+
+body main section ul li.upstairs {
+	transform: translate(0, -300%) scale(.75);
+	transition: 600ms ease;
+}
+
+body main section ul li.downstairs {
+	transform: translate(0%, 200%) scale(.75);
+	transition: 600ms ease;
+}
+
+
+body main section ul li.left-album {
+	transform: translate(0, 13%) scale(.75);
+	transition: 600ms ease;
+}
+
+body main section ul li.right-album {
+	transform: translate(0, -13%) scale(.75);
+	transition: 600ms ease;
+}
+
+body main section ul li.middle-album {
+	transform: translate(0, 0);
+	transition: 600ms ease;
+}
+
+body main section ul li button {
+	display: none;
+}
+
+body main section ul li.middle-album button {
+	display: inline;
+	border: 1px solid white;
+	border-radius: .5em;
+	padding: .5em;
+	background: none;
+	color: white;
+	font-family: 'Courier New', Courier, monospace;
+}
+body main section ul li.middle-album button:hover {
+	color: #000;
+	background-color: white;
+}
+body main section ul::before {
+	content: "";
+	background-image: radial-gradient(rgba(255, 255, 255, 0.1) 9%,
+			transparent 9%);
+	background-position: 0% 0%;
+	background-size: 5vmin 5vmin;
+	height: 100vh;
+	left: 0px;
+	position: absolute;
+	top: 0px;
+	transition: background-size 1000ms ease-in-out,
+		background-position 1000ms ease-in-out;
+	width: 100vw;
+	z-index: 1;
+}
+
+body main section div {
+	position: relative;
+}
+
+body main section div button {
+	position: absolute;
+	background-color: #2b2b2b;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 1.25em;
+	color: white;
+	padding: .5em 1em;
+	border: none;
+	border-radius: 1em;
+	box-shadow: var(--box-shadow);
+	z-index: 10;
+}
+
+body main section div button:nth-of-type(1) {
+	left: calc(35% - 2em);
+	top: -5em;
+}
+
+body main section div button:nth-of-type(2) {
+	left: calc(60% - 2em);
+	top: -5em;
+}
+
+body main section div button:hover {
+	box-shadow: none;
+}
+
+/* body main section ul.index0::before {
+	background-position: -10% -5%;
+}
+
+body main section ul.index1::before {
+	background-position: 0% 0%;
+}
+
+body main section ul.index2::before {
+	background-position: 10% -5%;
+} */
+
+body:has(.left-album:hover) main section ul::before {
+	background-position: -10% -5%;
+}
+
+body:has(.middle-album:hover) main section ul::before {
+	background-position: 0% 0%;
+}
+
+body:has(.right-album:hover) main section ul::before {
+	background-position: 10% -5%;
+}
+
+
+
+
+
+.displaynone {
+	display: none;
+}
+
