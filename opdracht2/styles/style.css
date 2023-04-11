@@ -34,11 +34,43 @@ summary {
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
-:root {
-	--color-text: #111;
+
+	:root {
+		--font-all: 'Courier New',
+		Courier,
+		monospace;
+		--color-text: #111;
+		--color-tekst-white: #fff;
+		--color-background: #eee;
+		--box-shadow: 2px 2px .5em rgba(0, 0, 0, .25);
+		--black: #000;
+		--var-background-1b: #1b1b1b;
+		--var-background-2b: #2b2b2b;
+		--var-background-3b: #3b3b3b;
+		--var-background-white: none;
+		--background-dots: radial-gradient(rgba(255, 255, 255, .1) 9%,
+				transparent 9%);
+	}
+
+/* 	
+@media (prefers-color-scheme: light) {
+	:root {
+	--font-all: 'Courier New',
+	Courier,
+	monospace;
+	--color-text: #cdcdcd;
+	--color-text-white: #000;
 	--color-background: #eee;
-	--box-shadow: 2px 2px .5em rgba(255, 255, 255, .25);
-}
+	--box-shadow: 2px 2px .5em rgba(255, 255, 255, 0.25);
+	--black: #929292;
+	--var-background-1b: #1b1b1b;
+	--var-background-2b: #2b2b2b;
+	--var-background-3b: #3b3b3b;
+	--var-background-white: #fff;
+	--background-dots: radial-gradient(rgba(0, 0, 0, 0.25) 9%,
+		transparent 9%);
+	}
+} */
 
 /****************/
 /* JOUW STYLING */
@@ -55,46 +87,52 @@ body {
 
 /* mijn code */
 
-h1{
+h1 {
 	position: absolute;
 	top: 1em;
 	left: calc(50% - 6.5em);
 	z-index: 100;
-	color: white;
+	color: var(--color-tekst-white);
 }
-button:hover{
+
+button:hover {
 	cursor: pointer;
 }
-body main>section:first-of-type{
+
+body main>section:first-of-type {
 	position: absolute;
 	top: 2em;
 	z-index: 100;
 }
-body main>section:first-of-type h2{
-	color: white;
+
+body main>section:first-of-type h2 {
+	color: var(--color-tekst-white);
 	margin-bottom: .5em;
-	margin-left: .5	em;
+	margin-left: .5 em;
 }
-body main>section:first-of-type button{
+
+body main>section:first-of-type button {
 	min-width: 10em;
 	background-color: #3b3b3b;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: var(--font-all);
 	font-size: 1em;
-	color: white;
+	color: var(--color-tekst-white);
 	padding: .55em 1em;
 	border: none;
 	border-radius: 1em;
 }
+
 body main>section:first-of-type button:hover {
-	color: #000;
-	background-color: white;
+	color: var(--black);
+	background-color: var(--color-tekst-white);
 }
+
 body main section ul {
 	width: 100vw;
 	position: relative;
 	list-style-type: none;
-	background-color: #1b1b1b;
-	color: white;
+	background-color: var(--var-background-1b);
+	color: var(--color-tekst-white);
 	height: 100dvh;
 	display: flex;
 	flex-direction: row;
@@ -105,7 +143,7 @@ body main section ul {
 }
 
 body main section ul li {
-	background-color: #2b2b2b;
+	background-color: var(--var-background-2b);
 	padding: .5em 1em;
 	text-align: center;
 	display: flex;
@@ -170,20 +208,23 @@ body main section ul li.middle-album button {
 	border-radius: .5em;
 	padding: .5em;
 	background: none;
-	color: white;
-	font-family: 'Courier New', Courier, monospace;
+	color: var(--color-tekst-white);
+	font-family: var(--font-all);
 }
+
 body main section ul li.middle-album button:hover {
-	color: #000;
-	background-color: white;
+	color: var(--black);
+	background-color: var(--color-tekst-white);
 }
+
 body main section ul::before {
 	content: "";
-	background-image: radial-gradient(rgba(255, 255, 255, 0.1) 9%,
-			transparent 9%);
+	background-image: var(--background-dots);
 	background-position: 0% 0%;
 	background-size: 5vmin 5vmin;
-	height: 100vh;
+	background-repeat: repeat;
+	background-color: var(--var-background-white);
+	height: 400vh;
 	left: 0px;
 	position: absolute;
 	top: 0px;
@@ -199,10 +240,10 @@ body main section div {
 
 body main section div button {
 	position: absolute;
-	background-color: #2b2b2b;
+	background-color: var(--var-background-2b);
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 1.25em;
-	color: white;
+	color: var(--color-tekst-white);
 	padding: .5em 1em;
 	border: none;
 	border-radius: 1em;
@@ -224,17 +265,6 @@ body main section div button:hover {
 	box-shadow: none;
 }
 
-/* body main section ul.index0::before {
-	background-position: -10% -5%;
-}
-
-body main section ul.index1::before {
-	background-position: 0% 0%;
-}
-
-body main section ul.index2::before {
-	background-position: 10% -5%;
-} */
 
 body:has(.left-album:hover) main section ul::before {
 	background-position: -10% -5%;
@@ -249,10 +279,69 @@ body:has(.right-album:hover) main section ul::before {
 }
 
 
-
-
-
 .displaynone {
 	display: none;
 }
 
+@media (max-width: 800px) {
+	html{
+		/* overflow: auto; */
+	}
+	body main>section:nth-of-type(1){
+		display: none;
+	} 
+	body main section ul {
+		display: flex;
+		flex-direction: column;
+		overflow: scroll;
+		height: 100vh;
+	}
+	body main section ul li{
+		transform: translate(0, 0) scale(1) !important;
+
+		display: flex !important;
+		flex-direction: row;
+		width: 80vw;
+		height: 20vh;
+	}
+	
+	body main section ul li:first-of-type{
+		margin-top: 300vh;
+	}
+	body main section ul li div{
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		width: 50%;
+	}
+	body main section ul li img {
+		width: 20vw;
+	}
+	body main section ul li button {
+	display: inline;
+	border: 1px solid white;
+	border-radius: .5em;
+	padding: .5em;
+	background: none;
+	color: var(--color-tekst-white);
+	font-family: var(--font-all);
+	}
+
+
+	body main section div button {
+		display: none;
+	}
+
+	body:has(.left-album:hover) main section ul::before {
+		background-position: 0 0 ;
+	}
+
+	body:has(.middle-album:hover) main section ul::before {
+		background-position: 0% 0%;
+	}
+
+	body:has(.right-album:hover) main section ul::before {
+		background-position: 0 0;
+	}
+}
+	

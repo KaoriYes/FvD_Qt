@@ -46,7 +46,7 @@ function filter() {
     start1();
     console.log(listItemsAll);
   } else if (filterStatus == 2) {
-  listItemsAll = filteredElectronic;
+    listItemsAll = filteredElectronic;
     // Loop through the elements in filteredElectronic and add the class "displaynone"
     for (var i = 0; i < filteredRap.length; i++) {
       var element = document.querySelector('.' + filteredRap[i]);
@@ -316,3 +316,62 @@ prevButton.addEventListener('click', prev1);
 filterRapBtn.addEventListener('click', filterRap);
 filterElectronicBtn.addEventListener('click', filterElectronic);
 filterSJBtn.addEventListener('click', filterSJ);
+
+
+
+// if (window.matchMedia('(max-width: 800px)').matches) {
+//   console.log('mobile');
+//   document.getElementById('menu').addEventListener('click', function (event) {
+//     var playbtn1 = event.target;
+//     if (playbtn1.classList.contains('playbtn')) {
+//       // Traverse up the DOM tree to find the parent LI element
+//       var listItem = playbtn1.closest('li');
+
+//       // Extract the selected index based on the index of the parent LI element among its siblings
+//       var selectedIndex = Array.from(listItem.parentElement.children).indexOf(listItem);
+//       console.log(selectedIndex);
+//       if (isNaN(selectedIndex) || selectedIndex < 0 || selectedIndex >= allListItems.length) {
+//         console.error('Invalid selectedIndex');
+//         return;
+//       }
+
+//       var audioElement = new Audio();
+//       var audioUrl = `/opdracht2/audio/${allListItems[selectedIndex]}.mp3`;
+//       console.log(audioUrl);
+
+//       function playRandomSlice() {
+//         if (audioElement.paused === false) {
+//           console.log("pause is " + audioElement.paused);
+//           audioElement.pause(); // Pause if playing
+//           playbtn1.innerHTML = 'Play';
+//         } else if (audioElement.paused === true) {
+//           console.log("pause is " + audioElement.paused);
+//           fetch(audioUrl)
+//             .then(response => response.arrayBuffer())
+//             .then(buffer => {
+//               var slicedBuffer = sliceBuffer(buffer);
+//               var blob = new Blob([slicedBuffer]); // Binary Large Object
+//               var slicedUrl = URL.createObjectURL(blob); // create a URL from the blob
+//               audioElement.src = slicedUrl;
+//               audioElement.play(); // Play if paused
+//               playbtn1.innerHTML = 'Pause';
+//             })
+//             .catch(error => console.error(error));
+//         }
+//       }
+
+
+
+//       function sliceBuffer(buffer) {
+//         var duration = 5; // duration of the random slice in seconds
+//         var sampleRate = 44100; // sample rate of the audio file
+//         var start = Math.random() * (buffer.byteLength - duration * sampleRate * 2);
+//         var end = start + duration * sampleRate * 2;
+//         return buffer.slice(start, end);
+//       }
+
+//     playRandomSlice();
+//     }
+//   });
+// }
+
